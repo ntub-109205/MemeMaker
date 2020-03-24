@@ -1,0 +1,5 @@
+class Maincontroller {
+    public function index() {
+        return view('index');
+    }
+}
