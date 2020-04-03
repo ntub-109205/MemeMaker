@@ -5,35 +5,36 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PageAdapter extends FragmentPagerAdapter {
 
-    private int numberoftabs;
+    private final List<Fragment> lstFragment = new ArrayList<>();
+    private final List<String> lstTitles = new ArrayList<>();
 
-    public PageAdapter(FragmentManager fm, int numberoftabs) {
+    public PageAdapter(FragmentManager fm) {
         super(fm);
-        this.numberoftabs = numberoftabs;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        switch (position){
-            case 0:
-                return new edittab1();
-            case 1:
-                return new edittab2();
-            default:
-                return null;
-        }
+        return lstFragment.get(position);
     }
 
     @Override
     public int getCount() {
-        return numberoftabs;
+        return lstTitles.size();
     }
 
     @Override
-    public int getItemPosition(@NonNull Object object) {
-        return POSITION_NONE;
+    public CharSequence getPageTitle(int position) {
+        return lstTitles.get(position);
+    }
+
+    public void AddFragment(Fragment fragment,String title) {
+        lstFragment.add(fragment);
+        lstTitles.add(title);
     }
 }
