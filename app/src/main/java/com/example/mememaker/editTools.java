@@ -16,7 +16,7 @@ public class editTools extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Intent edit = new Intent(editTools.this,editPublicsettings.class);
+                Intent edit = new Intent(editTools.this,editPublicsetting.class);
                 startActivity(edit);
             }
         });

@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".editPublicsettings"
-            android:label="@string/title_activity_edit_publicsettings"></activity>
+        <activity android:name=".editPublicsetting"></activity>
         <activity android:name=".editTools" />
         <activity android:name=".editSetname" />
         <activity android:name=".editChoosePhoto" />
