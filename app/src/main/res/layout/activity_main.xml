@@ -60,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.973"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852"
+        app:layout_constraintVertical_bias="0.88"
         fab:menu_animationDelayPerItem="55"
         fab:menu_backgroundColor="@android:color/transparent"
         fab:menu_buttonSpacing="0dp"
@@ -94,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_person_black_24dp"
-            fab:fab_label="Person"
+            fab:fab_label="製作梗圖"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -102,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_explore_black_24dp"
-            fab:fab_label="Explore"
+            fab:fab_label="製作長輩圖"
             fab:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
@@ -110,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_exit_to_app_black_24dp"
-            fab:fab_label="Exit"
+            fab:fab_label="製作動圖"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
