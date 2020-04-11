@@ -6,6 +6,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_edit_publicsettings"></string>
 
+    <!-- MainLayout -->
+    <string name="MemeTemplate">梗圖模板</string>
+    <string name="ElderTemplate">長輩圖模板</string>
+
     <!-- TabLayout -->
     <string name="tabTemplate">熱門模板</string>
     <string name="tabMineTemplate">我的模板</string>

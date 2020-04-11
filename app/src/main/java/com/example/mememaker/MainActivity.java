@@ -1,6 +1,7 @@
 package com.example.mememaker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.mememaker.custom.SpecialTab;
 import com.example.mememaker.custom.SpecialTabRound;
+import com.google.android.material.tabs.TabLayout;
 
 import me.majiajie.pagerbottomtabstrip.NavigationController;
 import me.majiajie.pagerbottomtabstrip.PageNavigationView;
@@ -22,6 +24,11 @@ import com.github.clans.fab.FloatingActionButton;
 public class MainActivity extends AppCompatActivity {
     //死按鈕宣告
     FloatingActionButton fabMeme, fabElder, fabgif;
+    //button onClick to next page
+    public Button btnAddMeme;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    public PageAdapter pagerAdapter;
 
 //    //button onClick to next page
 //    public Button btnAddMeme;
@@ -92,6 +99,20 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "You Selected fabgif!!!!", Toast.LENGTH_LONG).show();
             }
         });
+
+        //fragment cardview
+        tabLayout = (TabLayout)findViewById(R.id.mainTablayout);
+        viewPager = (ViewPager)findViewById(R.id.mainViewPager);
+        pagerAdapter = new PageAdapter(getSupportFragmentManager());
+
+        //Add Fragment here
+        pagerAdapter.AddFragment(new maintab1(),"梗圖模板");
+        pagerAdapter.AddFragment(new maintab2(),"長輩圖模板");
+
+        viewPager.setAdapter(pagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
         //tab導覽列
         PageNavigationView tab = findViewById(R.id.tab);
