@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.mememaker.custom.SpecialTab;
 import com.example.mememaker.custom.SpecialTabRound;
@@ -16,20 +17,25 @@ import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
 import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectedListener;
 
-public class MainActivity extends AppCompatActivity {
-    //button onClick to next page
-    public Button btnAddMeme;
+import com.github.clans.fab.FloatingActionButton;
 
-    public void init(){
-        btnAddMeme = (Button)findViewById(R.id.button1);
-        btnAddMeme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                Intent edit = new Intent(MainActivity.this,editMain.class);
-                startActivity(edit);
-            }
-        });
-    }
+public class MainActivity extends AppCompatActivity {
+    //死按鈕宣告
+    FloatingActionButton fabMeme, fabElder, fabgif;
+
+//    //button onClick to next page
+//    public Button btnAddMeme;
+//
+//    public void init(){
+//        btnAddMeme = (Button)findViewById(R.id.button1);
+//        btnAddMeme.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v){
+//                Intent edit = new Intent(MainActivity.this,editMain.class);
+//                startActivity(edit);
+//            }
+//        });
+//    }
 
     //普通樣子的tab
     private BaseTabItem newItem(int drawable, int checkedDrawable, String text){
@@ -53,7 +59,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
+       // init();
+
+        //死按鈕設定
+        fabMeme = findViewById(R.id.fabMeme);
+        fabElder = findViewById(R.id.fabElder);
+        fabgif = findViewById(R.id.fabgif);
+
+        fabMeme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(MainActivity.this, "You Selected FabExplore!!!!", Toast.LENGTH_LONG).show();
+                /**從MAIN 跳到 SECOND 頁面*/
+                Intent intent = new Intent(MainActivity.this, editMain.class);
+                /** 啟動intent */
+                intent.setClass(MainActivity.this,editMain.class);
+                startActivity(intent);
+            }
+        });
+
+        fabElder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "You Selected fabElder!!!!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+        fabgif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "You Selected fabgif!!!!", Toast.LENGTH_LONG).show();
+            }
+        });
 
         //tab導覽列
         PageNavigationView tab = findViewById(R.id.tab);
