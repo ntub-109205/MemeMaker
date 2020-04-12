@@ -131,6 +131,20 @@ public class MainActivity extends AppCompatActivity {
                 StringBuffer sb = new StringBuffer();
                 sb.append("old=").append(old).append(",index=").append(index);
                 Log.d("TAB", sb.toString());
+
+                switch (index){
+                    case 0://跳到首頁
+                        /**從MAIN 跳到 Main 頁面*/
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        /** 啟動intent */
+                        intent.setClass(MainActivity.this,MainActivity.class);
+                        startActivity(intent);
+                    case 1:
+                    case 2:
+                    case 3:
+                    default:
+                        break;
+                }
             }
 
             @Override
