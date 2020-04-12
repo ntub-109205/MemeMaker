@@ -53,6 +53,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:textSize="18sp"
+                android:textColor="#000000"
                 android:text="標註標籤" />
 
             <EditText
@@ -65,6 +66,24 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <Switch
+                android:id="@+id/tempSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="模板公開" />
+
+            <Switch
+                android:id="@+id/memeSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="梗圖公開" />
 
         </LinearLayout>
     </LinearLayout>
