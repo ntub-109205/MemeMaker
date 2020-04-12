@@ -1,5 +1,7 @@
 package com.example.mememaker;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
@@ -7,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
 public class editPublicsettings extends AppCompatActivity {
-
+    public String name;
+    Uri uri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +23,11 @@ public class editPublicsettings extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+
+        uri = getIntent().getData();       //取得傳遞過來的資料
+        Intent intent = this.getIntent();
+        name = intent.getStringExtra("name");
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {
