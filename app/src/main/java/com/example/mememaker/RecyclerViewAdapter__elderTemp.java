@@ -30,7 +30,7 @@ public class RecyclerViewAdapter__elderTemp extends RecyclerView.Adapter<Recycle
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v;
-        v = LayoutInflater.from(mContext).inflate(R.layout.item_hottemplate,parent,false);
+        v = LayoutInflater.from(mContext).inflate(R.layout.item_template,parent,false);
         MyViewHolder vHolder = new MyViewHolder(v);
         return vHolder;
     }
