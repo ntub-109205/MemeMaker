@@ -15,6 +15,7 @@
             android:name=".editPublicsettings"
             android:label="@string/title_activity_edit_publicsettings"></activity>
         <activity android:name=".editTools" />
+        <activity android:name=".MyPage" />
         <activity android:name=".editSetname" />
         <activity android:name=".editChoosePhoto" />
         <activity android:name=".editMain" />

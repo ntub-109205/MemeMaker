@@ -20,7 +20,8 @@ import me.majiajie.pagerbottomtabstrip.listener.OnTabItemSelectedListener;
 
 import com.github.clans.fab.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MyPage extends AppCompatActivity {
     //死按鈕宣告
     FloatingActionButton fabMeme, fabElder, fabgif;
     //button onClick to next page
@@ -28,20 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     public PageAdapter pagerAdapter;
-
-//    //button onClick to next page
-//    public Button btnAddMeme;
-//
-//    public void init(){
-//        btnAddMeme = (Button)findViewById(R.id.button1);
-//        btnAddMeme.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v){
-//                Intent edit = new Intent(MainActivity.this,editMain.class);
-//                startActivity(edit);
-//            }
-//        });
-//    }
 
     //普通樣子的tab
     private BaseTabItem newItem(int drawable, int checkedDrawable, String text){
@@ -52,20 +39,11 @@ public class MainActivity extends AppCompatActivity {
         return mainTab;
     }
 
-    /*圓形的tab
-    private BaseTabItem newRoundItem(int drawable,int checkedDrawable,String text){
-        SpecialTabRound mainTab = new SpecialTabRound(this);
-        mainTab.initialize(drawable,checkedDrawable,text);
-        mainTab.setTextDefaultColor(0xFF888888);//預設灰色
-        mainTab.setTextCheckedColor(0xFFFEDA84);//主題色
-        return mainTab;
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-       // init();
+        setContentView(R.layout.activity_mypage);
+        // init();
 
         //死按鈕設定
         fabMeme = findViewById(R.id.fabMeme);
@@ -77,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Toast.makeText(MainActivity.this, "You Selected FabExplore!!!!", Toast.LENGTH_LONG).show();
                 /**從MAIN 跳到 SECOND 頁面*/
-                Intent intent = new Intent(MainActivity.this, editMain.class);
+                Intent intent = new Intent(MyPage.this, editMain.class);
                 /** 啟動intent */
-                intent.setClass(MainActivity.this,editMain.class);
+                intent.setClass(MyPage.this,editMain.class);
                 startActivity(intent);
             }
         });
@@ -87,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         fabElder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "You Selected fabElder!!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MyPage.this, "You Selected fabElder!!!!", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -95,23 +73,9 @@ public class MainActivity extends AppCompatActivity {
         fabgif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "You Selected fabgif!!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MyPage.this, "You Selected fabgif!!!!", Toast.LENGTH_LONG).show();
             }
         });
-
-        //fragment cardview
-        tabLayout = (TabLayout)findViewById(R.id.mainTablayout);
-        viewPager = (ViewPager)findViewById(R.id.mainViewPager);
-        pagerAdapter = new PageAdapter(getSupportFragmentManager());
-
-        //Add Fragment here
-        pagerAdapter.AddFragment(new maintab1(),"梗圖模板");
-        pagerAdapter.AddFragment(new maintab2(),"長輩圖模板");
-
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
         //tab導覽列
         PageNavigationView tab = findViewById(R.id.tab);
@@ -133,22 +97,17 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (index){
                     case 0://跳到首頁
-//                        /**從MAIN 跳到 Main 頁面*/
-//                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-//                        /** 啟動intent */
-//                        intent.setClass(MainActivity.this,MainActivity.class);
-//                        startActivity(intent);
+                        /**從MAIN 跳到 Main 頁面*/
+                        Intent intent = new Intent(MyPage.this, MainActivity.class);
+                        /** 啟動intent */
+                        intent.setClass(MyPage.this,MainActivity.class);
+                        startActivity(intent);
                         break;
                     case 1:
                         break;
                     case 2:
                         break;
                     case 3:
-                        /**從MAIN 跳到 我的 頁面*/
-                        Intent intent = new Intent(MainActivity.this, MyPage.class);
-                        /** 啟動intent */
-                        intent.setClass(MainActivity.this,MyPage.class);
-                        startActivity(intent);
                         break;
                     default:
                         break;
