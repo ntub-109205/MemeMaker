@@ -36,13 +36,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="45dp"
-        android:background="@drawable/bgrectangle"
+        android:background="#f4f1f1"
         app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toEndOf="@+id/include"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTablayout"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.52"/>
 
     <!--    <Button-->
     <!--        android:id="@+id/button1"-->
