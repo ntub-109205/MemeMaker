@@ -35,10 +35,14 @@ public class editTools extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
+<<<<<<< HEAD
                 Intent edit = new Intent(editTools.this,editPublicsettings.class);
                 edit.setData(uri);
                 edit.putExtra("name",name);
 
+=======
+                Intent edit = new Intent(editTools.this,editPublicsetting.class);
+>>>>>>> 395b0b2d6d8f1d3a099df143b94e8a3a1e6a44b8
                 startActivity(edit);
             }
         });
