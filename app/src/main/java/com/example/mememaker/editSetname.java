@@ -42,6 +42,8 @@ public class editSetname extends AppCompatActivity {
                 //new一個intent物件，並指定Activity切換的class
                 Intent edit = new Intent(editSetname.this,editTools.class);
                 //切換Activity
+                edit.setData(uri);
+                edit.putExtra("name",templateName);
                 startActivity(edit);
             }
         });
