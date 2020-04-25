@@ -1,8 +1,12 @@
 package com.example.mememaker.custom;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,6 +19,11 @@ import androidx.core.content.ContextCompat;
 
 import com.example.mememaker.R;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.URISyntaxException;
+
 import me.majiajie.pagerbottomtabstrip.internal.RoundMessageView;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
 
@@ -24,7 +33,7 @@ import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
  * Created by mjj on 2017/6/3
  */
 public class SpecialTab extends BaseTabItem {
-
+    public int viewIndex = 0;
     private ImageView mIcon;
     private final TextView mTitle;
     private final RoundMessageView mMessages;
@@ -55,9 +64,20 @@ public class SpecialTab extends BaseTabItem {
         mMessages = findViewById(R.id.messages);
     }
 
+//    protected void onCreate(Bundle savedInstanceState) throws URISyntaxException {
+////        Bundle bundle = getIntent().getExtras();
+////        viewIndex = bundle.getInt("index");
+//        Bundle index = new Bundle();
+//        index = index.getIntent("index").getExtras();
+//        viewIndex = index.getInt("index",0);
+//
+//    }
+
     @Override
     public void setOnClickListener(@Nullable OnClickListener l) {
-        View view = getChildAt(0);
+//        SharedPreferences sp = this.getInt("index",0);
+//        viewIndex = sp.getInt("index", 0);
+        View view = getChildAt(viewIndex);
         if (view != null) {
             view.setOnClickListener(l);
         }
