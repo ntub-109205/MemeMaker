@@ -55,6 +55,9 @@ public class editSetname extends AppCompatActivity {
         setContentView(R.layout.activity_edit_setname);
         uri = getIntent().getData();
 
+        //新增回到前一頁的箭頭
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Log.e("uri", uri.toString());
         //抽象資料的接口

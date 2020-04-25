@@ -18,6 +18,10 @@ public class editPublicsetting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_publicsetting);
 
+        //新增回到前一頁的箭頭
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //switch
         switchTemp = findViewById(R.id.tempSwitch);
         switchMeme = findViewById(R.id.memeSwitch);

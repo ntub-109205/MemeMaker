@@ -40,6 +40,11 @@ public class editTools extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_tools);
+
+        //新增回到前一頁的箭頭
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         uri = getIntent().getData();
 
         Intent intent = this.getIntent();       //取得傳遞過來的資料

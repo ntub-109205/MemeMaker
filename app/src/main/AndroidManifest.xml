@@ -11,10 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".editPublicsetting"></activity>
-        <activity android:name=".editTools" />
-        <activity android:name=".MyPage" />
-        <activity android:name=".editSetname" />
+        <activity android:name=".editPublicsetting"
+            android:parentActivityName=".editPublicsetting"></activity> //跳頁(可以執行，但是傳遞值很怪!!)
+        <activity android:name=".editTools"
+            android:parentActivityName=".editTools"/>
+        <activity android:name=".MyPage"/>
+        <activity android:name=".editSetname"
+            android:parentActivityName=".editSetname"/>
         <activity android:name=".editChoosePhoto" />
         <activity android:name=".editMain" />
         <activity android:name=".WelcomeActivity">
